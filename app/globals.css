@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+html {
+  background-color: #f7f5f0;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+  background-image: radial-gradient(circle at 1px 1px, #00000008 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hairline rule, the platform's structural signature — used instead of
+   card shadows/borders-with-radius everywhere data needs separating. */
+.rule-top {
+  border-top: 1px solid theme("colors.rule");
+}
+.rule-bottom {
+  border-bottom: 1px solid theme("colors.rule");
+}
+
+::selection {
+  background-color: theme("colors.signal-soft");
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.signal");
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
